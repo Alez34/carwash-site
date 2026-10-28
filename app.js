@@ -203,6 +203,23 @@ installButton.addEventListener("click", async () => {
   installHelp.hidden = false;
 });
 
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+if (!prefersReducedMotion && "IntersectionObserver" in window) {
+  const revealItems = document.querySelectorAll(".section-label, .principle, .service-row, .booking-form, .map-card, .install");
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-visible");
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.12 });
+  document.documentElement.classList.add("reveal-ready");
+  revealItems.forEach((item) => {
+    item.classList.add("reveal");
+    revealObserver.observe(item);
+  });
+}
+
 if ("serviceWorker" in navigator && ["https:", "http:"].includes(location.protocol) && location.hostname !== "") {
   window.addEventListener("load", () => {
     navigator.serviceWorker.register("./sw.js").catch((error) => {
