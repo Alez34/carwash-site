@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#12221f">
+    <meta name="description" content="Демонстрационный шаблон сайта автомойки: услуги, цены, часы работы и форма предварительной записи.">
+    <link rel="icon" href="icon.svg" type="image/svg+xml">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="stylesheet" href="styles.css">
+    <title>Север — автомойка и детейлинг</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Перейти к содержимому</a>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Север — главная">
+        <span class="brand-symbol" aria-hidden="true">С</span>
+        <span class="brand-name"><strong data-business-name>СЕВЕР</strong><small>АВТОМОЙКА · ДЕТЕЙЛИНГ</small></span>
+      </a>
+      <nav class="navigation" aria-label="Основная навигация">
+        <a href="#services">Услуги</a>
+        <a href="#approach">Подход</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <a class="header-cta" href="#booking">Записаться <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="hero-content">
+          <div class="eyebrow"><span class="live-dot" aria-hidden="true"></span><span data-open-status>Открыты сегодня</span><span class="eyebrow-separator">/</span><span data-hours-short>09:00 — 21:00</span></div>
+          <h1>Пусть дорога<br>начнётся <em>с чистого.</em></h1>
+          <p class="hero-lead">Бережная мойка, внимательный уход и немного больше заботы о машине, чем вы ожидали.</p>
+          <div class="hero-actions">
+            <a class="button button-lime" href="#booking">Подобрать время <span aria-hidden="true">↗</span></a>
+            <a class="underlined-link" href="#services">Выбрать услугу <span aria-hidden="true">↓</span></a>
+          </div>
+          <div class="hero-footnote"><span aria-hidden="true">✳</span><span>Чисто до последней детали<br><strong>без спешки и лишних слов</strong></span></div>
+        </div>
+
+        <div class="hero-visual" role="img" aria-label="Иллюстрация ухоженного автомобиля на фоне зелёного сияния">
+          <div class="visual-orbit orbit-one"></div>
+          <div class="visual-orbit orbit-two"></div>
+          <div class="visual-stamp"><span>ЗАБОТА</span><strong>с</strong><span>ПЕРВОГО ВЗГЛЯДА</span></div>
+          <svg class="car-art" viewBox="0 0 760 420" aria-hidden="true">
+            <defs>
+              <linearGradient id="body" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#f8f6e8"/><stop offset=".52" stop-color="#dce8d7"/><stop offset="1" stop-color="#91b4a2"/></linearGradient>
+              <linearGradient id="window" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#73978a"/><stop offset="1" stop-color="#294842"/></linearGradient>
+            </defs>
+            <ellipse cx="384" cy="339" rx="285" ry="28" fill="#081311" opacity=".58"/>
+            <path d="M75 277c8-26 35-45 87-57l83-98c19-23 42-35 77-37l136-4c36 0 61 12 86 37l75 79c47 10 76 25 91 47l17 48-23 33H95l-27-29z" fill="url(#body)" stroke="#d8e6d9" stroke-width="5"/>
+            <path d="m254 133-78 93h155V105c-31 1-56 10-77 28zm96-28v121h205l-70-73c-17-18-38-27-65-29z" fill="url(#window)" stroke="#aec4b3" stroke-width="5"/>
+            <path d="M176 232c113 18 257 18 413-3" fill="none" stroke="#fff" stroke-width="4" opacity=".64"/>
+            <path d="M89 269c100 17 197 24 314 21 112-2 187-7 280-25" fill="none" stroke="#6b8a7b" stroke-width="5"/>
+            <path d="M83 270h42v29H73zm609-7 29 18-11 20h-36z" fill="#f3c38e"/>
+            <path d="M145 302h66m342 0h62" stroke="#233630" stroke-width="10" stroke-linecap="round"/>
+            <circle cx="228" cy="315" r="52" fill="#111b19"/><circle cx="228" cy="315" r="30" fill="#9eafa2"/><circle cx="228" cy="315" r="12" fill="#364640"/>
+            <circle cx="566" cy="315" r="52" fill="#111b19"/><circle cx="566" cy="315" r="30" fill="#9eafa2"/><circle cx="566" cy="315" r="12" fill="#364640"/>
+            <path d="M377 241h104" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".65"/>
+          </svg>
+          <span class="droplet droplet-a" aria-hidden="true"></span><span class="droplet droplet-b" aria-hidden="true"></span><span class="droplet droplet-c" aria-hidden="true"></span>
+          <div class="visual-caption"><span aria-hidden="true">✦</span> ВАШ АВТОМОБИЛЬ СКАЖЕТ СПАСИБО</div>
+          <span class="demo-label">ДЕМО · НАСТРОЙТЕ ДАННЫЕ ПОД СВОЮ МОЙКУ</span>
+        </div>
+        <div class="hero-bottom"><span>ДЕЛАЕМ ЧИСТОТУ ЧАСТЬЮ ХОРОШЕГО ДНЯ</span><a href="#approach">УЗНАТЬ НАШ ПОДХОД ↓</a></div>
+      </section>
+
+      <section class="intro section-wrap" id="approach">
+        <div class="section-label"><span>01</span> / НАШ ПОДХОД</div>
+        <div class="intro-layout">
+          <h2>Больше, чем<br><em>просто мойка.</em></h2>
+          <div class="intro-copy">
+            <p>Мы верим, что хороший уход складывается из простых вещей: деликатных средств, внимательных рук и спокойного отношения к каждой машине.</p>
+            <a class="inline-link" href="#booking">Почувствовать разницу <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="principles">
+          <article class="principle"><span class="principle-index">01 — 03</span><span class="principle-icon" aria-hidden="true">✳</span><h3>Деликатно</h3><p>Средства и уход подбираются с уважением к поверхностям автомобиля.</p></article>
+          <article class="principle"><span class="principle-index">02 — 03</span><span class="principle-icon" aria-hidden="true">◷</span><h3>Вовремя</h3><p>Выберите удобный интервал и планируйте визит заранее.</p></article>
+          <article class="principle"><span class="principle-index">03 — 03</span><span class="principle-icon" aria-hidden="true">⌁</span><h3>Внимательно</h3><p>Кузов, стёкла, салон — каждая деталь заслуживает внимания.</p></article>
+        </div>
+      </section>
+
+      <section class="services section-wrap" id="services">
+        <div class="section-label"><span>02</span> / ЧТО МЫ ДЕЛАЕМ</div>
+        <div class="section-heading">
+          <h2>Хорошее настроение<br><em>начинается с чистого.</em></h2>
+          <p>Выберите уход, который подходит именно сегодня. Услуги и цены в шаблоне — демонстрационные.</p>
+        </div>
+        <div class="service-list" id="service-list"></div>
+        <div class="service-note"><span>ЦЕНЫ И СОСТАВ УСЛУГ НАСТРАИВАЮТСЯ В app.js</span><a class="inline-link" href="#booking">Выбрать услугу <span aria-hidden="true">↗</span></a></div>
+      </section>
+
+      <section class="booking section-wrap" id="booking">
+        <div class="section-label"><span>03</span> / ПЛАНИРУЕМ ВИЗИТ</div>
+        <div class="booking-layout">
+          <div class="booking-intro">
+            <h2>Пара минут —<br><em>и вы готовы.</em></h2>
+            <p>Выберите услугу, дату и время. В этой демонстрационной версии можно посмотреть заявку, но она никуда не отправляется и не сохраняется.</p>
+            <div class="privacy-note"><span aria-hidden="true">✳</span><span>Никакой скрытой отправки.<br><strong>Ваши данные не сохраняются.</strong></span></div>
+          </div>
+          <form class="booking-form" id="booking-form">
+            <div class="form-top"><span>ПРЕДВАРИТЕЛЬНАЯ ЗАЯВКА</span><span>ШАГ 01 / 01</span></div>
+            <label for="service-select">Выберите услугу</label>
+            <select id="service-select" name="service" required></select>
+            <div class="form-row">
+              <div><label for="booking-date">Дата визита</label><input id="booking-date" name="date" type="date" required></div>
+              <div><label for="booking-time">Удобное время</label><select id="booking-time" name="time" required><option value="">Сначала выберите дату</option></select></div>
+            </div>
+            <label for="client-name">Ваше имя</label>
+            <input id="client-name" name="name" type="text" autocomplete="name" placeholder="Например, Мария" minlength="2" maxlength="60" required>
+            <label for="client-phone">Номер телефона</label>
+            <input id="client-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+7 900 000-00-00" minlength="7" maxlength="24" required>
+            <label class="consent"><input type="checkbox" name="demo-understood" required><span>Понимаю: эта форма показывает демо-заявку, но не отправляет её и не создаёт запись.</span></label>
+            <button class="button button-lime submit-button" type="submit">Показать предварительную заявку <span aria-hidden="true">↗</span></button>
+            <p class="form-disclaimer">Для реальной записи необходимо подключить серверную обработку.</p>
+            <div class="form-result" id="form-result" role="status" aria-live="polite" hidden></div>
+          </form>
+        </div>
+      </section>
+
+      <section class="contacts section-wrap" id="contacts">
+        <div class="section-label"><span>04</span> / ЗАЕЗЖАЙТЕ В ГОСТИ</div>
+        <div class="contacts-layout">
+          <div>
+            <h2>Будем рады<br><em>вас видеть.</em></h2>
+            <p class="contact-helper">Укажите актуальные контакты и график в объекте BUSINESS в файле <code>app.js</code>.</p>
+          </div>
+          <div class="contact-details">
+            <div class="detail"><span>АДРЕС</span><strong data-address>Добавьте адрес автомойки</strong><a data-map-link href="#contacts" hidden>Открыть карту ↗</a></div>
+            <div class="detail"><span>ТЕЛЕФОН</span><strong data-phone>Добавьте номер телефона</strong><a data-phone-link href="#contacts" hidden>Позвонить ↗</a></div>
+            <div class="detail"><span>ЧАСЫ РАБОТЫ</span><strong data-hours>Ежедневно · 09:00 — 21:00</strong><small data-hours-note>Демонстрационный график</small></div>
+          </div>
+        </div>
+        <div class="map-card">
+          <span class="map-pin" aria-hidden="true">⌖</span>
+          <span class="map-copy" id="map-copy">Добавьте адрес и ссылку на карту в <code>app.js</code></span>
+          <a class="map-link" data-map-link href="#contacts" hidden>Открыть карту <span aria-hidden="true">↗</span></a>
+          <span class="map-pattern" aria-hidden="true"></span>
+        </div>
+      </section>
+
+      <section class="install section-wrap" aria-labelledby="install-title">
+        <div class="install-icon"><img src="icon.svg" alt="" width="42" height="42"></div>
+        <div class="install-copy"><h2 id="install-title">Всегда под рукой</h2><p>Добавьте сайт на главный экран — как приложение.</p></div>
+        <button class="button button-light install-button" id="install-button" type="button">Добавить на экран <span aria-hidden="true">↗</span></button>
+        <p class="install-help" id="install-help" role="status" aria-live="polite" hidden></p>
+      </section>
+    </main>
+
+    <footer class="footer section-wrap">
+      <a class="brand brand-footer" href="#top"><span class="brand-symbol" aria-hidden="true">С</span><span class="brand-name"><strong data-business-name>СЕВЕР</strong><small>АВТОМОЙКА · ДЕТЕЙЛИНГ</small></span></a>
+      <p>Демонстрационный шаблон автомойки.<br>Не является реальным сервисом бронирования.</p>
+      <a class="footer-top" href="#top">НАВЕРХ ↑</a>
+    </footer>
+    <script src="app.js" defer></script>
+  </body>
+</html>

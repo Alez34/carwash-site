@@ -1,0 +1,21 @@
+{
+  "id": "./",
+  "name": "Север — автомойка и детейлинг",
+  "short_name": "Север",
+  "description": "Демонстрационный шаблон сайта автомойки",
+  "lang": "ru",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#12221f",
+  "theme_color": "#12221f",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
