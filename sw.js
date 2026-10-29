@@ -1,5 +1,5 @@
-const CACHE_NAME = "sever-carwash-v13";
-const APP_FILES = ["./?v=neon-v9", "./index.html?v=neon-v9", "./styles.css?v=neon-v5", "./app.js?v=neon-v2", "./manifest.webmanifest", "./icon.svg", "./public/mustang-cutout.png?v=neon-v5"];
+const CACHE_NAME = "sever-carwash-v14";
+const APP_FILES = ["./?v=neon-v10", "./index.html?v=neon-v10", "./styles.css?v=neon-v5", "./app.js?v=neon-v2", "./manifest.webmanifest", "./icon.svg", "./public/mustang-cutout.png?v=neon-v6"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(APP_FILES)));
@@ -27,7 +27,7 @@ self.addEventListener("fetch", (event) => {
       caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
       return response;
     }).catch(() => {
-      if (event.request.mode === "navigate") return caches.match("./index.html?v=neon-v9");
+      if (event.request.mode === "navigate") return caches.match("./index.html?v=neon-v10");
       throw new Error("Offline resource is not cached.");
     });
   }));
