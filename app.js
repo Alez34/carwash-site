@@ -220,6 +220,25 @@ if (!prefersReducedMotion && "IntersectionObserver" in window) {
   });
 }
 
+const mobileBookingCta = document.querySelector(".mobile-booking-cta");
+const bookingForm = byId("booking-form");
+if ("IntersectionObserver" in window && mobileBookingCta && bookingForm) {
+  let bookingFormIsVisible = false;
+  const updateMobileCta = () => {
+    const formHasFocus = bookingForm.contains(document.activeElement);
+    mobileBookingCta.classList.toggle("is-hidden", bookingFormIsVisible || formHasFocus);
+    mobileBookingCta.setAttribute("aria-hidden", String(bookingFormIsVisible || formHasFocus));
+    mobileBookingCta.tabIndex = bookingFormIsVisible || formHasFocus ? -1 : 0;
+  };
+  const bookingObserver = new IntersectionObserver(([entry]) => {
+    bookingFormIsVisible = entry.isIntersecting;
+    updateMobileCta();
+  }, { threshold: 0.18 });
+  bookingObserver.observe(bookingForm);
+  bookingForm.addEventListener("focusin", updateMobileCta);
+  bookingForm.addEventListener("focusout", () => requestAnimationFrame(updateMobileCta));
+}
+
 if ("serviceWorker" in navigator && ["https:", "http:"].includes(location.protocol) && location.hostname !== "") {
   window.addEventListener("load", () => {
     navigator.serviceWorker.register("./sw.js").catch((error) => {
