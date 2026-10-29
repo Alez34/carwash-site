@@ -6,7 +6,8 @@ const BUSINESS = {
   open: "09:00",
   close: "21:00",
   slotMinutes: 60,
-  mapUrl: ""
+  mapUrl: "",
+  telegramUsername: "YOUR_TELEGRAM_USERNAME"
 };
 
 const SERVICES = [
@@ -168,13 +169,34 @@ byId("booking-form").addEventListener("submit", (event) => {
     month: "long",
     year: "numeric"
   });
+  const telegramUsername = BUSINESS.telegramUsername.trim().replace(/^@/, "");
+  if (!/^[A-Za-z0-9_]{5,32}$/.test(telegramUsername) || telegramUsername === "YOUR_TELEGRAM_USERNAME") {
+    result.textContent = "Сначала укажите Telegram username владельца в BUSINESS.telegramUsername в файле app.js.";
+    result.hidden = false;
+    return;
+  }
+
   result.replaceChildren();
   const heading = document.createElement("strong");
-  heading.textContent = "Предварительный просмотр — запись не создана.";
+  heading.textContent = "Черновик подготовлен — запись ещё не создана.";
   const summary = document.createElement("p");
-  summary.textContent = `${selectedService.name}, ${visitDate} в ${formData.get("time")}. Данные не отправлены и не сохранены.`;
-  result.append(heading, summary);
+  summary.textContent = `Telegram откроется с черновиком заявки. Проверьте его и нажмите «Отправить» — только тогда сообщение будет отправлено владельцу. Сайт не сохраняет данные; запись не подтверждена.`;
+  const telegramLink = document.createElement("a");
+  telegramLink.className = "button button-lime";
+  telegramLink.href = `https://t.me/${telegramUsername}?text=${encodeURIComponent([
+    `Заявка на запись в ${displayName}`,
+    `Услуга: ${selectedService.name}`,
+    `Дата: ${visitDate}`,
+    `Время: ${formData.get("time")}`,
+    `Имя: ${name}`,
+    `Телефон: ${phoneValue}`
+  ].join("\n"))}`;
+  telegramLink.target = "_blank";
+  telegramLink.rel = "noopener noreferrer";
+  telegramLink.textContent = "Открыть Telegram с черновиком";
+  result.append(heading, summary, telegramLink);
   result.hidden = false;
+  window.open(telegramLink.href, "_blank", "noopener,noreferrer");
 });
 
 let installPrompt = null;

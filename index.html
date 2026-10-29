@@ -83,7 +83,7 @@
         <div class="booking-layout">
           <div class="booking-intro">
             <h2>Пара минут —<br><em>и вы готовы.</em></h2>
-            <p>Выберите услугу, дату и время. В этой демонстрационной версии можно посмотреть заявку, но она никуда не отправляется и не сохраняется.</p>
+            <p>Выберите услугу, дату и время — сайт подготовит текст и откроет Telegram. Сообщение уйдёт владельцу только если вы сами нажмёте «Отправить» в Telegram.</p>
             <div class="privacy-note"><span aria-hidden="true">✳</span><span>Никакой скрытой отправки.<br><strong>Ваши данные не сохраняются.</strong></span></div>
           </div>
           <form class="booking-form" id="booking-form">
@@ -98,9 +98,9 @@
             <input id="client-name" name="name" type="text" autocomplete="name" placeholder="Например, Мария" minlength="2" maxlength="60" required>
             <label for="client-phone">Номер телефона</label>
             <input id="client-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+7 900 000-00-00" minlength="7" maxlength="24" required>
-            <label class="consent"><input type="checkbox" name="demo-understood" required><span>Понимаю: эта форма показывает демо-заявку, но не отправляет её и не создаёт запись.</span></label>
-            <button class="button button-lime submit-button" type="submit">Показать предварительную заявку <span aria-hidden="true">↗</span></button>
-            <p class="form-disclaimer">Для реальной записи необходимо подключить серверную обработку.</p>
+            <label class="consent"><input type="checkbox" name="telegram-understood" required><span>Понимаю: сайт подготовит черновик в Telegram; отправка произойдёт только после моего нажатия «Отправить».</span></label>
+            <button class="button button-lime submit-button" type="submit">Открыть Telegram с заявкой <span aria-hidden="true">↗</span></button>
+            <p class="form-disclaimer">Замените YOUR_TELEGRAM_USERNAME в BUSINESS.telegramUsername в app.js. Запись не подтверждена, пока владелец не ответит.</p>
             <div class="form-result" id="form-result" role="status" aria-live="polite" hidden></div>
           </form>
         </div>
@@ -141,6 +141,6 @@
       <a class="footer-top" href="#top">НАВЕРХ ↑</a>
     </footer>
     <a class="mobile-booking-cta" href="#booking"><span>ЗАПИСАТЬСЯ</span><span aria-hidden="true">↗</span></a>
-    <script src="app.js?v=neon-v3" defer></script>
+    <script src="app.js?v=neon-v4" defer></script>
   </body>
 </html>

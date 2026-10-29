@@ -140,6 +140,7 @@ h2 em { color: var(--neon); }
 .form-result { margin-top: 14px; padding: 12px; border: 1px solid rgba(182,255,54,.28); color: #d8e6d3; background: rgba(182,255,54,.06); font-size: 10px; line-height: 1.65; }
 .form-result[hidden] { display: none; }
 .form-result p { margin: 4px 0 0; }
+.form-result .button { min-height: 42px; margin-top: 12px; }
 
 .contacts { padding-top: 87px; padding-bottom: 81px; }
 .contacts-layout { align-items: start; margin-top: 24px; }
