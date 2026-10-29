@@ -222,14 +222,22 @@ if (!prefersReducedMotion && "IntersectionObserver" in window) {
 
 const mobileBookingCta = document.querySelector(".mobile-booking-cta");
 const bookingForm = byId("booking-form");
-if ("IntersectionObserver" in window && mobileBookingCta && bookingForm) {
+const hero = document.querySelector(".hero");
+if ("IntersectionObserver" in window && mobileBookingCta && bookingForm && hero) {
   let bookingFormIsVisible = false;
+  let heroIsVisible = true;
   const updateMobileCta = () => {
     const formHasFocus = bookingForm.contains(document.activeElement);
-    mobileBookingCta.classList.toggle("is-hidden", bookingFormIsVisible || formHasFocus);
-    mobileBookingCta.setAttribute("aria-hidden", String(bookingFormIsVisible || formHasFocus));
-    mobileBookingCta.tabIndex = bookingFormIsVisible || formHasFocus ? -1 : 0;
+    const shouldHide = !heroIsVisible || bookingFormIsVisible || formHasFocus;
+    mobileBookingCta.classList.toggle("is-hidden", shouldHide);
+    mobileBookingCta.setAttribute("aria-hidden", String(shouldHide));
+    mobileBookingCta.tabIndex = shouldHide ? -1 : 0;
   };
+  const heroObserver = new IntersectionObserver(([entry]) => {
+    heroIsVisible = entry.isIntersecting && entry.intersectionRatio >= 0.15;
+    updateMobileCta();
+  }, { threshold: [0, 0.15] });
+  heroObserver.observe(hero);
   const bookingObserver = new IntersectionObserver(([entry]) => {
     bookingFormIsVisible = entry.isIntersecting;
     updateMobileCta();
